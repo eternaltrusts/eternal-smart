@@ -1,0 +1,60 @@
+#
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+# Local build binaries
+node-cli/node-cli
+*.pyc
+/build/*
+/bin
+docs/build/*
+gotools/build/*
+examples/e2e_cli/docker-compose-e2e.yamlt
+.idea
+*.iml
+.DS_Store
+tags
+.tags
+.vagrant/
+/build
+/manifests
+/scripts/manifests
+/release/darwin-amd64
+/release/linux-amd64
+/release/linux-s390x
+/release/linux-ppc64le
+/release/windows-amd64
+# Emacs backup files
+*~
+*#
+.#*
+# Vim file artifacts
+.*.sw*
+# bddtest log files
+*.log
+# bddtest coverage files
+bddtests/coverage
+# bddtest Dockerfile
+bddtests/environments/kafka/Dockerfile
+bddtests/tmp
+bddtests/volumes
+*.cov
+# Makefile dummy artifacts
+.*-dummy
+# go-carpet output files
+go-carpet-coverage*
+# Test result xml files
+report.xml
+results.xml
+TESTS*.xml
+.settings
+.project
+.gradle
+bin/
+examples/e2e_cli/channel-artifacts/*.tx
+examples/e2e_cli/channel-artifacts/*.block
+examples/e2e_cli/crypto-config/*
+# tox
+.tox/
+# vscode settings
+.vscode
