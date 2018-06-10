@@ -46,7 +46,7 @@ import (
 )
 
 var genesisBlock = cb.NewBlock(0, nil)
-var systemChainID = "systemChain"
+var systemChainID = "ettChain"
 
 var sendDeliverResponseProducer = func(srv ab.AtomicBroadcast_DeliverServer) func(msg proto.Message) error {
 	return func(msg proto.Message) error {
@@ -56,7 +56,7 @@ var sendDeliverResponseProducer = func(srv ab.AtomicBroadcast_DeliverServer) fun
 
 var timeWindow = time.Duration(15 * time.Minute)
 var testCert = &x509.Certificate{
-	Raw: []byte("test"),
+	Raw: []byte("testET"),
 }
 
 const ledgerSize = 10
