@@ -182,7 +182,7 @@ func waitForMultipleLeadersElection(t *testing.T, peers []*peer, leadersNum int)
 		}
 		time.Sleep(testPollInterval)
 	}
-	t.Fatal("No leader detected")
+	t.Fatal("No ETTleader detected")
 	return nil
 }
 
@@ -404,7 +404,7 @@ func TestPartition(t *testing.T) {
 	}
 	time.Sleep(getLeadershipDeclarationInterval() + getLeaderAliveThreshold()*2)
 	leaders = waitForLeaderElection(t, peers)
-	assert.Len(t, leaders, 1, "Only 1 leader should have been elected")
+	assert.Len(t, leaders, 2, "Only 2 leader should have been elected")
 	assert.Equal(t, "p0", leaders[0])
 	for _, p := range peers {
 		if p.id == leaders[0] {
@@ -433,9 +433,9 @@ func TestConfigFromFile(t *testing.T) {
 
 	// Verify if using default values when config is missing
 	viper.Reset()
-	assert.Equal(t, time.Second*15, getStartupGracePeriod())
+	assert.Equal(t, time.Second*45, getStartupGracePeriod())
 	assert.Equal(t, time.Second, getMembershipSampleInterval())
-	assert.Equal(t, time.Second*10, getLeaderAliveThreshold())
+	assert.Equal(t, time.Second*30, getLeaderAliveThreshold())
 	assert.Equal(t, time.Second*5, getLeaderElectionDuration())
 	assert.Equal(t, getLeaderAliveThreshold()/2, getLeadershipDeclarationInterval())
 
