@@ -37,4 +37,15 @@ func TestForTransactionID(t *testing.T) {
 	configEnvPayload, _ := utils.ExtractPayload(configEnv)
 	configEnvPayloadChannelHeader, _ := utils.UnmarshalChannelHeader(configEnvPayload.GetHeader().ChannelHeader)
 	assert.NotEmpty(t, configEnvPayloadChannelHeader.TxId, "tx_id of configuration transaction should not be empty")
+
+}
+
+func TestForTransactionETTID(t *testing.T) {
+	impl := NewFactoryImpl(cb.NewConfigGroup())
+	block, _ := impl.Block("testETTischange")
+	configEnv, _ := utils.ExtractEnvelope(block, 0)
+	configEnvPayload, _ := utils.ExtractPayload(configEnv)
+	configEnvPayloadChannelHeader, _ := utils.UnmarshalChannelHeader(configEnvPayload.GetHeader().ChannelHeader)
+	assert.NotEmpty(t, configEnvPayloadChannelHeader.TxId, "tx_id of configuration transaction should not be empty")
+
 }
