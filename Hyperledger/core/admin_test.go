@@ -67,4 +67,9 @@ func TestLoggingCalls(t *testing.T) {
 	assert.NotNil(t, logResponse, "logResponse should have been set")
 	assert.Equal(t, flogging.DefaultLevel(), logResponse.LogLevel, "logger level should have been the default")
 	assert.Nil(t, err, "Error should have been nil")
+
+	logResponse, err = adminServer.GetModuleLogLevel(context.Background(), &pb.LogLevelRequest{LogModule: "test"})
+	assert.NotNil(t, logResponse, "logResponse should have been set")
+	assert.Equal(t, flogging.DefaultLevel(), logResponse.LogLevel, "logger level should have been the default")
+	assert.Nil(t, err, "Error should have been nil")
 }

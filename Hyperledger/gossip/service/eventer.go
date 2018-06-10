@@ -35,10 +35,10 @@ type ConfigProcessor interface {
 	ProcessConfigUpdate(config Config)
 }
 
-type configStore struct {
-	anchorPeers []*peer.AnchorPeer
-	orgMap      map[string]channelconfig.ApplicationOrg
-}
+//type configStore struct {
+//	anchorPeers []*peer.AnchorPeer
+//	orgMap      map[string]channelconfig.ApplicationOrg
+//}
 
 type configEventReceiver interface {
 	updateAnchors(config Config)
