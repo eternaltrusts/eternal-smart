@@ -1,0 +1,12 @@
+Flask==1.0.2
+Flask-DebugToolbar==0.9.2
+Flask-HTTPAuth==2.5.0
+flask-peewee==3.0.0
+Flask-RESTful==0.3.6
+Flask-Security==3.0.0
+Pillow==4.3.0
+gunicorn==19.7.1
+psycopg2==2.7.3.2
+bcrypt==3.1.4
+#elasticsearch==5.4.0
+#yunpian-python-sdk==1.0.0
