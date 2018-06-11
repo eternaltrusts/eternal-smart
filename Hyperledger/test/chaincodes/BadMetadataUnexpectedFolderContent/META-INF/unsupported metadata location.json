@@ -1,1 +1,0 @@
-This test file is located at an unexpected metadata location under META-INF. It should fail golang chaincode packaging tests.
